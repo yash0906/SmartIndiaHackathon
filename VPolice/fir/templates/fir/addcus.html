@@ -1,0 +1,31 @@
+{% extends "fir/base.html" %}
+{% block content %}
+	<h1>Form submit page</h1><br>
+	<br>
+	<div class='container border pb-2'>
+	<h1>Missing Child</h1>
+	<form action="{% url 'fir-addmissing' %}" method='POST'>
+		{% csrf_token %}
+		<table>
+			{{ missing_form.as_table }}
+		
+		</table>
+		<input type="submit" name="Submit" class="btn btn-primary">
+
+	</form>
+	</div>
+	<br>
+	<br>
+	<div class='container border pb-2'>
+	<h1>Stolen Vehicle</h1>
+	<form action="{% url 'fir-stolen' %}" method='POST'>
+		{% csrf_token %}
+		<table>
+			{{ stolen_form.as_table }}
+		
+		</table>
+		<input type="submit" name="Submit" class="btn btn-primary">
+
+	</form>
+	</div>
+{% endblock %}

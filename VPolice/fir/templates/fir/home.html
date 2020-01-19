@@ -1,0 +1,57 @@
+{% extends "fir/base.html" %}
+{% block content %}
+	<div class='table-responsive'>
+	<h1>Missing Children</h1>	
+	<table class='table table-bordered'>
+		<tr>
+			<th>Child Id</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Height</th>
+			<th>Sex</th>
+			<th>Complexion</th>
+			<th>Face</th>
+			<th>Hair</th>
+			<th>Eye</th>
+			<th>State</th>
+			<th>Missing From</th>
+		</tr>
+	{% for missing in missings %}
+		<tr>
+			<td>{{ missing.child_id }}</td>
+			<td>{{ missing.name }}</td>
+			<td>{{ missing.age }}</td>
+			<td>{{ missing.height }}</td>
+			<td>{{ missing.sex }}</td>
+			<td>{{ missing.complexion }}</td>
+			<td>{{ missing.face }}</td>
+			<td>{{ missing.hair }}</td>
+			<td>{{ missing.eye }}</td>
+			<td>{{ missing.state }}</td>
+			<td>{{ missing.missing_date }}</td>
+			
+		</tr>
+	{% endfor %}
+	</table>
+	<br><br>
+	<h1>Stolen Vehicle</h1>	
+	<table class='table table-bordered'>
+		<tr>
+			<th>Vehicle Id</th>
+			<th>Vehicle Type</th>
+			<th>Registration Number</th>
+			<th>Engine Number</th>
+			<th>Chassis Number</th>
+		</tr>
+	{% for stolen in stolens %}
+		<tr>
+			<td>{{ stolen.vehicle_id }}</td>
+			<td>{{ stolen.vehicle_type }}</td>
+			<td>{{ stolen.reg_num }}</td>
+			<td>{{ stolen.eng_num }}</td>
+			<td>{{ stolen.chassis_num }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+	</div>
+{% endblock content %}
